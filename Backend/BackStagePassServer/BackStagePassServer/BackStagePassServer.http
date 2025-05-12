@@ -1,0 +1,6 @@
+@BackStagePassServer_HostAddress = http://localhost:5090
+
+GET {{BackStagePassServer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
