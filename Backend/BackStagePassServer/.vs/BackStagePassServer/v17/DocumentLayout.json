@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\dtos\\uploadvideorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\dtos\\uploadvideorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\services\\ivideoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\services\\ivideoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\controllers\\videocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\controllers\\videocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\services\\videoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\services\\videoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,12 +63,77 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UploadVideoRequest.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\UploadVideoRequest.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\UploadVideoRequest.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\UploadVideoRequest.cs",
+              "RelativeToolTip": "BackStagePassServer\\DTOs\\UploadVideoRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T17:15:04.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VideoService.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\VideoService.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\Services\\VideoService.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\VideoService.cs",
+              "RelativeToolTip": "BackStagePassServer\\Services\\VideoService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T17:03:13.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IVideoService.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\IVideoService.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\Services\\IVideoService.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\IVideoService.cs",
+              "RelativeToolTip": "BackStagePassServer\\Services\\IVideoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T17:02:36.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "VideoController.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\VideoController.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\Controllers\\VideoController.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\VideoController.cs",
+              "RelativeToolTip": "BackStagePassServer\\Controllers\\VideoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T16:52:48.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\appsettings.json",
+              "RelativeDocumentMoniker": "BackStagePassServer\\appsettings.json",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\appsettings.json",
+              "RelativeToolTip": "BackStagePassServer\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-12T16:47:57.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Program.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Program.cs",
               "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Program.cs",
               "RelativeToolTip": "BackStagePassServer\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T16:17:19.331Z",
               "EditorCaption": ""

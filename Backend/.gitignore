@@ -1,0 +1,12 @@
+## C# ##
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+**/bin/
+**/obj/
+*.exe
+*.dll
+*.pdb
+*.cache

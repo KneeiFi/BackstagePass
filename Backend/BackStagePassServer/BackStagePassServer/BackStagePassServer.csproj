@@ -11,11 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
     <Folder Include="Data\" />
-    <Folder Include="DTOs\" />
-    <Folder Include="Services\" />
+    <Folder Include="wwwroot\videos\" />
   </ItemGroup>
 
 </Project>
