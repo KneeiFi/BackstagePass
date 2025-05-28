@@ -1,7 +1,6 @@
-﻿namespace BackStagePassServer.DTOs
+﻿namespace BackStagePassServer.DTOs;
+
+public class UploadVideoRequest
 {
-	public class UploadVideoRequest
-	{
-		public IFormFile File { get; set; }
-	}
+	public IFormFile File { get; set; }
 }

@@ -1,15 +1,53 @@
+using BackStagePassServer;
 using BackStagePassServer.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+
+builder.Services.AddHostedService<BackgroundCleanupService>();
 
 builder.Services.AddScoped<IVideoService, VideoService>();
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+	options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+builder.Services.AddSwaggerGen(c =>
+{
+	c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+
+	c.AddSecurityDefinition("accessToken", new OpenApiSecurityScheme
+	{
+		Description = "Вставьте access token (без Bearer)",
+		Name = "Authorization", // имя заголовка
+		In = ParameterLocation.Header,
+		Type = SecuritySchemeType.ApiKey,
+		Scheme = "accessToken"
+	});
+
+	c.AddSecurityRequirement(new OpenApiSecurityRequirement
+	{
+		{
+			new OpenApiSecurityScheme
+			{
+				Reference = new OpenApiReference
+				{
+					Type = ReferenceType.SecurityScheme,
+					Id = "accessToken"
+				}
+			},
+			Array.Empty<string>()
+		}
+	});
+});
 
 var app = builder.Build();
 
