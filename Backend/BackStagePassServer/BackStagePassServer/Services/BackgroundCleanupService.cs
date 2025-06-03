@@ -24,12 +24,6 @@ public class BackgroundCleanupService : BackgroundService
 
 					var now = DateTime.UtcNow;
 
-					// Удаляем пользователей без роли, чьи EmailConfirm просрочены
-					await db.Users
-						.Where(u => u.Role == null &&
-									db.EmailConfirms.Any(c => c.UserEmail == u.Email && c.ExpiryDate < now))
-						.ExecuteDeleteAsync(stoppingToken);
-
 					// Удаляем все просроченные EmailConfirm
 					await db.EmailConfirms
 						.Where(c => c.ExpiryDate < now)
