@@ -24,11 +24,22 @@ public class BackgroundCleanupService : BackgroundService
 
 					var now = DateTime.UtcNow;
 
-					// Очистка EmailConfirm
-					await db.EmailConfirms
-						.Where(c => c.ExpiryDate < now || c.IsConfirmed == 1)
+					// Удаляем пользователей без роли, чьи EmailConfirm просрочены
+					await db.Users
+						.Where(u => u.Role == null &&
+									db.EmailConfirms.Any(c => c.UserEmail == u.Email && c.ExpiryDate < now))
 						.ExecuteDeleteAsync(stoppingToken);
 
+					// Удаляем все просроченные EmailConfirm
+					await db.EmailConfirms
+						.Where(c => c.ExpiryDate < now)
+						.ExecuteDeleteAsync(stoppingToken);
+
+					// Удаляем пользователей без роли, у которых нет записи EmailConfirm
+					await db.Users
+						.Where(u => u.Role == null &&
+									!db.EmailConfirms.Any(c => c.UserEmail == u.Email))
+						.ExecuteDeleteAsync(stoppingToken);
 
 					// Очистка UserTokens
 					await db.UserTokens

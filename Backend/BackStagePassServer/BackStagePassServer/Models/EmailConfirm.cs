@@ -9,10 +9,4 @@ public class EmailConfirm
 	public string Key { get; set; }
 
 	public DateTime ExpiryDate { get; set; }
-
-	public int IsConfirmed { get; set; } = 0;
-
-	public string TempPasswordHash { get; set; }
-
-	public string TempUsername { get; set; }
 }

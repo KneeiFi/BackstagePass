@@ -28,9 +28,8 @@ public class VideoController : ControllerBase
 		if (user == null)
 			return Unauthorized("Недействительный токен доступа");
 
-		if (user.IsEmailConfirmed == 0)
+		if (user.Role == null)
 			return BadRequest("Email не подтвержден. Пожалуйста, подтвердите ваш email перед загрузкой видео.");
-
 
 		if (request.File == null)
 			return BadRequest("Файл не выбран");

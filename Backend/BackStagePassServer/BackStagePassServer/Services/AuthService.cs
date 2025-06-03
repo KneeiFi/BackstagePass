@@ -1,6 +1,7 @@
 ﻿using BackStagePassServer.DTOs;
 using BackStagePassServer.Models;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace BackStagePassServer.Services;
 
@@ -13,26 +14,6 @@ public class AuthService
 		_db = db;
 	}
 
-	public async Task<TokenResponseDto> RegisterAsync(RegisterDto dto)
-	{
-		if (await _db.Users.AnyAsync(u => u.Email == dto.Email && u.IsEmailConfirmed==1))
-			throw new Exception("Email already registered");
-
-		var passwordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password);
-		var user = new User
-		{
-			Email = dto.Email,
-			Username = dto.Username,
-			PasswordHash = passwordHash
-		};
-
-		_db.Users.Add(user);
-		await _db.SaveChangesAsync();
-
-		// Сгенерировать токены
-		return await GenerateTokensAsync(user);
-	}
-
 	public async Task<TokenResponseDto> LoginAsync(LoginDto dto)
 	{
 		var user = await _db.Users.FirstOrDefaultAsync(u => u.Email == dto.Email);
@@ -40,7 +21,7 @@ public class AuthService
 		if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
 			throw new Exception("Invalid credentials");
 
-		if (user.IsEmailConfirmed == 0)
+		if (user.Role == null)
 			throw new Exception("Email not confirmed");
 
 		return await GenerateTokensAsync(user);

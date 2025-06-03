@@ -3,6 +3,7 @@ using BackStagePassServer.Models;
 using BackStagePassServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace BackStagePassServer.Controllers;
 
@@ -24,24 +25,44 @@ public class AuthController : ControllerBase
 	[HttpPost("signup")]
 	public async Task<IActionResult> Signup([FromBody] RegisterDto dto)
 	{
-		// Проверка, не зарегистрирован ли уже такой email
-		if (await _db.Users.AnyAsync(u => u.Email == dto.Email) ||
-			await _db.EmailConfirms.AnyAsync(c => c.UserEmail == dto.Email && c.IsConfirmed == 0))
+		// Проверка формата email
+		if (string.IsNullOrWhiteSpace(dto.Email) || !new EmailAddressAttribute().IsValid(dto.Email))
 		{
-			return BadRequest("Email already used or waiting for confirmation");
+			return BadRequest(new { error = "Invalid email address format" });
 		}
+
+		// Проверка, не зарегистрирован ли уже такой email
+		if (await _db.Users.AnyAsync(u => u.Email == dto.Email))
+		{
+			return BadRequest(new { error = "Email already used or waiting for confirmation" });
+		}
+
+		// Хешируем пароль
+		var passwordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password);
+
+		// Создаём нового пользователя (без Role)
+		var user = new User
+		{
+			Email = dto.Email,
+			Username = dto.Username,
+			PasswordHash = passwordHash,
+			AvatarUrl = "default", // Можно заменить на реальный URL аватара
+			IsBanned = 0, // Не забанен
+			Role = null // Подтвердит — станет User
+		};
+
+		_db.Users.Add(user);
+
+		_db.SaveChanges();
 
 		var confirmKey = Guid.NewGuid().ToString();
 
-		// Сохраняем только EmailConfirm
+		// Сохраняем EmailConfirm
 		var confirm = new EmailConfirm
 		{
 			UserEmail = dto.Email,
 			Key = confirmKey,
 			ExpiryDate = DateTime.UtcNow.AddHours(1),
-			IsConfirmed = 0,
-			TempPasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password),
-			TempUsername = dto.Username
 		};
 
 		_db.EmailConfirms.Add(confirm);
@@ -58,60 +79,79 @@ public class AuthController : ControllerBase
 		{
 			// Если не удалось отправить email, удаляем запись
 			_db.EmailConfirms.Remove(confirm);
+			_db.Users.Remove(user);
 			await _db.SaveChangesAsync();
-			return BadRequest("Failed to send confirmation email. Please try again later.");
+			return BadRequest(new { error = "Failed to send confirmation email. Please try again later." });
 		}
 
-		return Ok("Confirmation email sent.");
+		return Ok(new { message = "Confirmation email sent." });
+	}
+
+	[HttpPost("check-email")]
+	public async Task<IActionResult> CheckEmail([FromBody] string email)
+	{
+		if (email==null)
+			return BadRequest(new { error = "Email is required" });
+
+		var exists = await _db.Users.AnyAsync(u => u.Email == email && u.Role != null);
+
+		return Ok(new { registered = exists });
 	}
 
 	[HttpPost("signin")]
 	public async Task<IActionResult> Signin([FromBody] LoginDto dto)
 	{
-		var token = await _authService.LoginAsync(dto);
-		return Ok(token);
+		try
+		{
+			var token = await _authService.LoginAsync(dto);
+			return Ok(token);
+		}
+		catch (Exception ex)
+		{
+			return BadRequest(new { error = ex.Message });
+		}
 	}
 
 	[HttpPost("refresh")]
 	public async Task<IActionResult> Refresh([FromBody] string refreshToken)
 	{
-		var token = await _authService.RefreshAsync(refreshToken);
-		return Ok(token);
+		try
+		{
+			var token = await _authService.RefreshAsync(refreshToken);
+			return Ok(token);
+		}
+		catch (Exception ex)
+		{
+			return BadRequest(new { error = ex.Message });
+		}
 	}
 
 	[HttpGet("confirm")]
 	public async Task<IActionResult> ConfirmEmail([FromQuery] string key)
 	{
-		var confirm = await _db.EmailConfirms.FirstOrDefaultAsync(c => c.Key == key && c.IsConfirmed == 0);
+		
+		var confirm = await _db.EmailConfirms.FirstOrDefaultAsync(c => c.Key == key);
 
 		if (confirm == null || confirm.ExpiryDate < DateTime.UtcNow)
 		{
-			return BadRequest("Invalid or expired confirmation key");
+			return BadRequest(new { error = "Invalid or expired confirmation key" });
 		}
 
-		// Создаём пользователя
-		var user = new User
+		var user = await _db.Users.FirstOrDefaultAsync(u => u.Email == confirm.UserEmail);
+
+		if (user == null)
 		{
-			Email = confirm.UserEmail,
-			Username = confirm.TempUsername,
-			PasswordHash = confirm.TempPasswordHash,
-			IsEmailConfirmed = 1,
-			Role = UserRole.User
-		};
+			return BadRequest(new { error = "User not found" });
+		}
 
-		_db.Users.Add(user);
-		confirm.IsConfirmed = 1;
+		user.Role = UserRole.User;
 
+		// Можно также удалить запись подтверждения, если она больше не нужна
+		_db.EmailConfirms.Remove(confirm);
 
 		await _db.SaveChangesAsync();
 
-		// Можно сразу генерировать access+refresh
-		var tokenPair = await _authService.GenerateTokensAsync(user);
-
-		// Возврат токенов, либо редирект с кодом
-		return Ok(tokenPair);
-
-		// или return Redirect("https://your-frontend/confirmed")
+		return Ok();
 	}
 }
 
