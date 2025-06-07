@@ -112,6 +112,38 @@ public class AuthController : ControllerBase
 		}
 	}
 
+	[HttpPost("forgot-password")]
+	public async Task<IActionResult> PasswordResset([FromBody] LoginDto dto)
+	{
+		var confirmKey = Guid.NewGuid().ToString();
+
+		// Сохраняем RessetPassword
+		var password = new RessetPassword
+		{
+			UserEmail = dto.Email,
+			Password = BCrypt.Net.BCrypt.HashPassword(dto.Password),
+			Key = confirmKey,
+			ExpiryDate = DateTime.UtcNow.AddHours(1),
+		};
+
+		_db.RessetPasswords.Add(password);
+		await _db.SaveChangesAsync();
+
+		var baseUrl = $"{Request.Scheme}://{Request.Host}";
+		var confirmUrl = $"{baseUrl}/api/Auth/password-confirm?key={confirmKey}";
+
+		try
+		{
+			await _emailService.SendConfirmationEmail(dto.Email, confirmUrl);
+		}
+		catch
+		{
+			return BadRequest(new { error = "Failed to send confirmation email. Please try again later." });
+		}
+
+		return Ok(new { message = "Confirmation email sent." });
+	}
+
 	[HttpPost("refresh")]
 	public async Task<IActionResult> Refresh([FromBody] string refreshToken)
 	{
@@ -148,6 +180,34 @@ public class AuthController : ControllerBase
 
 		// Можно также удалить запись подтверждения, если она больше не нужна
 		_db.EmailConfirms.Remove(confirm);
+
+		await _db.SaveChangesAsync();
+
+		return Ok();
+	}
+
+	[HttpGet("password-confirm")]
+	public async Task<IActionResult> ConfirmEmailPasswordResset([FromQuery] string key)
+	{
+
+		var confirm = await _db.RessetPasswords.FirstOrDefaultAsync(c => c.Key == key);
+
+		if (confirm == null || confirm.ExpiryDate < DateTime.UtcNow)
+		{
+			return BadRequest(new { error = "Invalid or expired confirmation key" });
+		}
+
+		var user = await _db.Users.FirstOrDefaultAsync(u => u.Email == confirm.UserEmail);
+
+		if (user == null)
+		{
+			return BadRequest(new { error = "User not found" });
+		}
+
+		user.PasswordHash = confirm.Password;
+
+		// Можно также удалить запись подтверждения, если она больше не нужна
+		_db.RessetPasswords.Remove(confirm);
 
 		await _db.SaveChangesAsync();
 

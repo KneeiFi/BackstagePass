@@ -1,4 +1,5 @@
-﻿namespace BackStagePassServer.Models;
+﻿
+namespace BackStagePassServer.Models;
 
 public enum UserRole { Admin, User }
 
@@ -11,7 +12,8 @@ public class User
 	public string PasswordHash { get; set; }
 	public string AvatarUrl { get; set; } = "default";
 	public int IsBanned { get; set; } = 0;
-	
 
+	public ICollection<Movie> Movies { get; set; }
 	public ICollection<UserToken> Tokens { get; set; }
+	public ICollection<Rating> Ratings { get; set; }
 }

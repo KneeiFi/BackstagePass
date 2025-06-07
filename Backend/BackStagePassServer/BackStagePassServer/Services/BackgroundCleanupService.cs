@@ -35,6 +35,11 @@ public class BackgroundCleanupService : BackgroundService
 									!db.EmailConfirms.Any(c => c.UserEmail == u.Email))
 						.ExecuteDeleteAsync(stoppingToken);
 
+					// Удаляем все просроченные RessetPassword
+					await db.RessetPasswords
+						.Where(c => c.ExpiryDate < now)
+						.ExecuteDeleteAsync(stoppingToken);
+
 					// Очистка UserTokens
 					await db.UserTokens
 						.Where(t => t.RefreshTokenExpiryTime < now)
