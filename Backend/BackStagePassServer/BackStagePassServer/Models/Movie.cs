@@ -8,7 +8,7 @@ public class Movie
 	public string Description { get; set; }
 	public float Rating { get; set; }
 	public string PosterURL { get; set; }
-
+	public DateTime ReleaseDate { get; set; }
 	public int UserId { get; set; }
 	public User User { get; set; }
 

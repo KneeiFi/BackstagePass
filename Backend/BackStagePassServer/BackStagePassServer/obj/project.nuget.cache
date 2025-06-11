@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hX8lQOj7M78=",
+  "dgSpecHash": "YmzUfhafwFY=",
   "success": true,
   "projectFilePath": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\BackStagePassServer.csproj",
   "expectedPackageFiles": [
@@ -38,6 +38,7 @@
     "C:\\Users\\Алексей\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
     "C:\\Users\\Алексей\\.nuget\\packages\\npgsql\\9.0.3\\npgsql.9.0.3.nupkg.sha512",
     "C:\\Users\\Алексей\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.4\\npgsql.entityframeworkcore.postgresql.9.0.4.nupkg.sha512",
+    "C:\\Users\\Алексей\\.nuget\\packages\\sixlabors.imagesharp\\3.1.9\\sixlabors.imagesharp.3.1.9.nupkg.sha512",
     "C:\\Users\\Алексей\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
     "C:\\Users\\Алексей\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.6.2\\swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
     "C:\\Users\\Алексей\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.6.2\\swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",

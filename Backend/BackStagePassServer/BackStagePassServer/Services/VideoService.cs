@@ -18,6 +18,10 @@ public class VideoService : IVideoService
 			throw new ArgumentException("Invalid video file.");
 
 		var extension = Path.GetExtension(file.FileName);
+		// Проверяем расширение файла
+		if (string.IsNullOrEmpty(extension) || !new[] { ".mp4", ".avi", ".mkv", ".mov" }.Contains(extension.ToLower()))
+			throw new ArgumentException("Unsupported file type. Only .mp4, .avi, .mkv, and .mov are allowed.");
+
 		var fileName = Guid.NewGuid().ToString() + extension;
 		var fullPath = Path.Combine(_videoDirectory, fileName);
 

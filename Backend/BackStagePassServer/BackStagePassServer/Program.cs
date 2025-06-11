@@ -12,6 +12,8 @@ builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddHostedService<BackgroundCleanupService>();
 
 builder.Services.AddScoped<IVideoService, VideoService>();
+builder.Services.AddScoped<IPosterService, PosterService>();
+builder.Services.AddScoped<IMovieService, MovieService>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 	options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));

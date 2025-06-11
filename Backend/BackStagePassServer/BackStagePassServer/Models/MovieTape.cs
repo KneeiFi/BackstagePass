@@ -1,6 +1,6 @@
 ﻿namespace BackStagePassServer.Models;
 
-public enum MediaType { Trailer, HowTheyMakeIt, BestMomments }
+public enum MediaType { Trailer, Movie, BestMomments, Other}
 
 
 public class MovieTape
@@ -13,4 +13,5 @@ public class MovieTape
 	public string TapeTitle { get; set; }
 	public MediaType MediaType { get; set; }
 	public string VideoUrl { get; set; }
+	public string ThumbnailUrl { get; set; }
 }

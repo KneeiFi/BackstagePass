@@ -3,6 +3,7 @@ using System;
 using BackStagePassServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BackStagePassServer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250611121635_ThumbnailUrlForMovieTape")]
+    partial class ThumbnailUrlForMovieTape
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,9 +109,6 @@ namespace BackStagePassServer.Migrations
                     b.Property<float>("Rating")
                         .HasColumnType("real");
 
-                    b.Property<DateTime>("ReleaseDate")
-                        .HasColumnType("timestamp with time zone");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("text");
@@ -184,10 +184,6 @@ namespace BackStagePassServer.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("TapeTitle")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("ThumbnailUrl")
                         .IsRequired()
                         .HasColumnType("text");
 

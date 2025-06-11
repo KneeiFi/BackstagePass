@@ -26,22 +26,27 @@ public class VideoController : ControllerBase
 	{
 		var user = await _authService.GetUserByAccessToken(accessToken);
 		if (user == null)
-			return Unauthorized("Недействительный токен доступа");
+			return Unauthorized(new { error = "Invalid access token" });
 
 		if (user.Role == null)
-			return BadRequest("Email не подтвержден. Пожалуйста, подтвердите ваш email перед загрузкой видео.");
+			return BadRequest(new { error = "Email not confirmed. Please confirm your email before uploading videos." });
 
 		if (request.File == null)
-			return BadRequest("Файл не выбран");
+			return BadRequest(new { error = "No file selected" });
 
-
-		var relativePath = await _videoService.SaveVideoAsync(request.File);
-		var fullUrl = $"{Request.Scheme}://{Request.Host}{relativePath}";
-
-		return Ok(new
+		try
+		{ 
+			var relativePath = await _videoService.SaveVideoAsync(request.File);
+			var fullUrl = $"{Request.Scheme}://{Request.Host}{relativePath}";
+			return Ok(new
+			{
+				url = fullUrl
+			});
+		}
+		catch (Exception ex)
 		{
-			url = fullUrl
-		});
+			return BadRequest(new { error = ex.Message });
+		}
 	}
 
 	[HttpGet("all")]
