@@ -1,1 +1,5 @@
-C:\MyProjects\c# Projects\BackstagePass\Backend\BackStagePassServer\BackStagePassServer\wwwroot\videos\157f13be-4d48-4f39-aeae-b508baf67256.mp4
+C:\MyProjects\c# Projects\BackstagePass\Backend\BackStagePassServer\BackStagePassServer\wwwroot\posters_original\7d59c2e8-83d6-43a2-b6b1-37d7808887fe.png
+C:\MyProjects\c# Projects\BackstagePass\Backend\BackStagePassServer\BackStagePassServer\wwwroot\posters_480p\7d59c2e8-83d6-43a2-b6b1-37d7808887fe.png
+C:\MyProjects\c# Projects\BackstagePass\Backend\BackStagePassServer\BackStagePassServer\wwwroot\posters_original\664a1e8b-89be-43a8-b0e9-d999535fced5.png
+C:\MyProjects\c# Projects\BackstagePass\Backend\BackStagePassServer\BackStagePassServer\wwwroot\posters_480p\664a1e8b-89be-43a8-b0e9-d999535fced5.png
+C:\MyProjects\c# Projects\BackstagePass\Backend\BackStagePassServer\BackStagePassServer\wwwroot\profiles\9b9a0ddd-412a-44cc-97f0-776d87fd657e.jpg

@@ -1,7 +1,7 @@
 ﻿
 namespace BackStagePassServer.Models;
 
-public enum UserRole { Admin, User }
+public enum UserRole { User = 1, Admin }
 
 public class User
 {

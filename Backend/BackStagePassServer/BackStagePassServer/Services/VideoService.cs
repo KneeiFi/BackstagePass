@@ -45,4 +45,22 @@ public class VideoService : IVideoService
 
 		return urls;
 	}
+
+	public async Task DeleteVideoByUrlAsync(string videoUrl)
+	{
+		if (string.IsNullOrWhiteSpace(videoUrl))
+			throw new ArgumentException("Video URL cannot be null or empty.");
+
+		var fileName = Path.GetFileName(new Uri(videoUrl, UriKind.RelativeOrAbsolute).LocalPath);
+		if (string.IsNullOrEmpty(fileName))
+			throw new ArgumentException("Invalid video URL.");
+
+		var filePath = Path.Combine(_videoDirectory, fileName);
+		if (!File.Exists(filePath))
+			throw new FileNotFoundException("Video file not found.", fileName);
+
+		await Task.Run(() => File.Delete(filePath));
+	}
+
+
 }

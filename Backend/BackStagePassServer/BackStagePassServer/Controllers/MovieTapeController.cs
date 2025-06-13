@@ -35,7 +35,7 @@ public class MovieTapeController : ControllerBase
 		if (user.Role == null)
 			return BadRequest(new { error = "Email not confirmed. Please confirm your email before uploading a video." });
 		if (user.Role != UserRole.Admin)
-			return Forbid("Only admins can upload movie tapes.");
+			return BadRequest(new { error = "Only admins can upload movie tapes." });
 		if (request.Video == null)
 			return BadRequest(new { error = "No file selected" });
 
@@ -103,10 +103,98 @@ public class MovieTapeController : ControllerBase
 			TapeTitle = mt.TapeTitle,
 			mediaType = mt.MediaType,
 			VideoUrl = mt.VideoUrl,
-			ThumbnailUrl = $"{Request.Scheme}://{Request.Host}/posters_original/{mt.ThumbnailUrl}"
+			ThumbnailUrl = $"{Request.Scheme}://{Request.Host}/posters_480p/{mt.ThumbnailUrl}"
 		})
 		.ToListAsync();
 
 		return Ok(tapes);
 	}
+
+	[HttpGet("movie/by-title/{movieTitle}")]
+	public async Task<IActionResult> GetMovieTapesByMovieTitle(string movieTitle)
+	{
+		if (string.IsNullOrWhiteSpace(movieTitle))
+			return BadRequest(new { error = "Movie title is required." });
+
+		var tapes = await _db.MovieTapes
+		.Where(mt => EF.Functions.Like(mt.TapeTitle, $"%{movieTitle}%"))
+		.Select(mt => new MovieTapeResponseDto
+		{
+			MovieId = mt.MovieId,
+			TapeTitle = mt.TapeTitle,
+			mediaType = mt.MediaType,
+			VideoUrl = mt.VideoUrl,
+			ThumbnailUrl = $"{Request.Scheme}://{Request.Host}/posters_480p/{mt.ThumbnailUrl}"
+		})
+		.ToListAsync();
+
+		return Ok(tapes);
+	}
+
+
+	[HttpDelete("{id:int}")]
+	public async Task<IActionResult> DeleteMovieTape(int id, 
+		[FromHeader(Name = "Authorization")] string accessToken)
+	{
+		var user = await _authService.GetUserByAccessToken(accessToken);
+		if (user == null)
+			return Unauthorized(new { error = "Invalid access token" });
+		if (user.Role == null)
+			return BadRequest(new { error = "Email not confirmed. Please confirm your email before deleting a video." });
+		if (user.Role != UserRole.Admin)
+			return BadRequest(new { error = "Only admins can delete movie tapes." });
+
+		var tape = await _db.MovieTapes.Include(mt => mt.Movie).FirstOrDefaultAsync(mt => mt.Id == id);
+		if (tape == null)
+			return NotFound(new { error = "Movie tape not found" });
+
+		
+		await _videoService.DeleteVideoByUrlAsync(tape.VideoUrl);
+
+		await _posterService.DeleteFileByNameAsync(tape.ThumbnailUrl);
+
+		_db.MovieTapes.Remove(tape);
+		await _db.SaveChangesAsync();
+
+		return Ok(new { message = "Movie tape and related files deleted successfully." });
+	}
+
+	[HttpPut("{id:int}")]
+	[Consumes("multipart/form-data")]
+	public async Task<IActionResult> UpdateMovieTape(int id,[FromForm] UpdateTapeDto request,
+	[FromHeader(Name = "Authorization")] string accessToken)
+	{
+		var user = await _authService.GetUserByAccessToken(accessToken);
+		if (user == null)
+			return Unauthorized(new { error = "Invalid access token" });
+		if (user.Role == null)
+			return BadRequest(new { error = "Email not confirmed. Please confirm your email before updating a video." });
+		if (user.Role != UserRole.Admin)
+			return BadRequest(new { error = "Only admins can update movie tapes." });
+
+		var tape = await _db.MovieTapes.FirstOrDefaultAsync(mt => mt.Id == id);
+		if (tape == null)
+			return NotFound(new { error = "Movie tape not found" });
+
+		// Update fields except video
+		tape.TapeTitle = request.TapeTitle ?? tape.TapeTitle;
+		tape.MovieId = request.MovieId ?? tape.MovieId;
+
+		// Poster is optional
+		if (request.Thumbnail != null)
+		{
+			// Delete old poster if exists
+			if (!string.IsNullOrEmpty(tape.ThumbnailUrl))
+			{
+				await _posterService.DeleteFileByNameAsync(tape.ThumbnailUrl);
+			}
+			var newPosterName = await _posterService.SavePosterAsync(request.Thumbnail);
+			tape.ThumbnailUrl = newPosterName;
+		}
+
+		await _db.SaveChangesAsync();
+
+		return Ok(new { message = "Movie tape updated successfully." });
+	}
+
 }

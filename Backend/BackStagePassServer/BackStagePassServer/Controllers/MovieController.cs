@@ -11,13 +11,17 @@ namespace BackStagePassServer.Controllers;
 public class MovieController : ControllerBase
 {
 	private readonly IMovieService _movieService;
+	private readonly IVideoService _videoService;
+	private readonly IPosterService _posterService;
 	private readonly AuthService _authService;
 	private readonly AppDbContext _db;
-	public MovieController(AuthService authService, AppDbContext db, IMovieService movieService)
+	public MovieController(AuthService authService, AppDbContext db, IMovieService movieService, IPosterService posterService, IVideoService videoService)
 	{
 		_authService = authService;
 		_db = db;
 		_movieService = movieService;
+		_posterService = posterService;
+		_videoService = videoService;
 	}
 
 	[HttpPost("upload/Movie&Genre")]
@@ -33,7 +37,7 @@ public class MovieController : ControllerBase
 			return BadRequest(new { error = "Email not confirmed. Please confirm your email before uploading videos." });
 
 		if (user.Role != UserRole.Admin)
-			return Forbid("Only admins can upload movies.");
+			return BadRequest(new { error = "Only admins can upload movies." });
 
 		try
 		{
@@ -144,5 +148,114 @@ public class MovieController : ControllerBase
 			PageSize = pageSize,
 			Movies = movies
 		});
+	}
+
+	[HttpDelete("{id:int}")]
+	public async Task<IActionResult> DeleteMovie(int id,
+		[FromHeader(Name = "Authorization")] string accessToken)
+	{
+		var user = await _authService.GetUserByAccessToken(accessToken);
+		if (user == null)
+			return Unauthorized(new { error = "Invalid access token" });
+
+		if (user.Role == null)
+			return BadRequest(new { error = "Email not confirmed. Please confirm your email before deleting movies." });
+
+		if (user.Role != UserRole.Admin)
+			return BadRequest(new { error = "Only admins can delete movies." });
+
+		var movie = await _db.Movies
+			.Include(m => m.MovieGenres)
+			.Include(m => m.MovieFilmMembers)
+			.Include(m => m.Tapes)
+			.FirstOrDefaultAsync(m => m.Id == id);
+
+		if (movie == null)
+			return NotFound(new { error = "Movie not found." });
+
+		
+		// Remove related MovieGenres
+		_db.MovieGenres.RemoveRange(movie.MovieGenres);
+
+		// Remove related MovieFilmMembers
+		_db.MovieFilmMembers.RemoveRange(movie.MovieFilmMembers);
+
+		// Before removing tapes from the database
+		foreach (var tape in movie.Tapes)
+		{
+			// Delete video file if exists
+			if (!string.IsNullOrEmpty(tape.VideoUrl))
+			{
+				await _videoService.DeleteVideoByUrlAsync(tape.VideoUrl);
+			}
+			// Delete thumbnail/poster file if exists
+			if (!string.IsNullOrEmpty(tape.ThumbnailUrl))
+			{
+				await _posterService.DeleteFileByNameAsync(tape.ThumbnailUrl);
+			}
+		}
+
+		// Remove related Tapes
+		_db.MovieTapes.RemoveRange(movie.Tapes);
+
+		// Remove Ratings
+		var ratings = _db.Set<Rating>().Where(r => r.MovieId == id);
+		_db.Set<Rating>().RemoveRange(ratings);
+
+		if (movie.PosterURL != null)
+		{
+			// Delete poster files
+			await _posterService.DeleteFileByNameAsync(movie.PosterURL);
+		}
+
+		// Remove the movie itself
+		_db.Movies.Remove(movie);
+
+		await _db.SaveChangesAsync();
+
+		return Ok(new { message = "Movie and all related data deleted successfully." });
+	}
+
+	[HttpPut("{id:int}/simple")]
+	[Consumes("multipart/form-data")]
+	public async Task<IActionResult> UpdateMovieSimple(int id, [FromForm] MovieSimpleDtoUpdate dto,
+	[FromHeader(Name = "Authorization")] string accessToken)
+	{
+		var user = await _authService.GetUserByAccessToken(accessToken);
+		if (user == null)
+			return Unauthorized(new { error = "Invalid access token" });
+
+		if (user.Role == null)
+			return BadRequest(new { error = "Email not confirmed. Please confirm your email before updating movies." });
+
+		if (user.Role != UserRole.Admin)
+			return BadRequest(new { error = "Only admins can update movies." });
+
+		var movie = await _db.Movies.FirstOrDefaultAsync(m => m.Id == id);
+		if (movie == null)
+			return NotFound(new { error = "Movie not found." });
+
+		if (dto.Title != null)
+			movie.Title = dto.Title;
+		if (dto.Description != null)
+			movie.Description = dto.Description;
+		if (dto.Rating.HasValue)
+			movie.Rating = dto.Rating.Value;
+		if (dto.ReleaseDate.HasValue)
+			movie.ReleaseDate = dto.ReleaseDate.Value;
+		if (dto.Poster != null)
+		{
+			// Delete old poster if exists
+			if (!string.IsNullOrEmpty(movie.PosterURL))
+			{
+				await _posterService.DeleteFileByNameAsync(movie.PosterURL);
+			}
+			// Save new poster and update PosterURL
+			movie.PosterURL = await _posterService.SavePosterAsync(dto.Poster);
+		}
+
+		await _db.SaveChangesAsync();
+
+		return Ok(new { message = "Movie updated successfully." });
 	}
 }
