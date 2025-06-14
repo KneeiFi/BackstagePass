@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BackStagePassServer.Controllers;
 
+[ApiController]
+[Route("api/[controller]")]
 public class GenreController : ControllerBase
 {
 	private readonly AuthService _authService;
