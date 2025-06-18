@@ -37,6 +37,10 @@ public class MovieService : IMovieService
 		{
 			foreach (var genreName in dto.Genres)
 			{
+				if (string.IsNullOrWhiteSpace(genreName))
+				{
+					continue;
+				}
 				var genre = _db.Genres.FirstOrDefault(g => g.Name == genreName);
 				if (genre == null)
 				{
@@ -51,17 +55,18 @@ public class MovieService : IMovieService
 		await _db.SaveChangesAsync(); // IDs for new genres
 
 		// 2. Add relationships
-		foreach (var genre in genres)
+		if (dto.Genres != null)
 		{
-			movie.MovieGenres.Add(new MovieGenre
+			foreach (var genre in genres)
 			{
-				GenreId = genre.Id,
-				MovieId = movie.Id
-			});
+				movie.MovieGenres.Add(new MovieGenre
+				{
+					GenreId = genre.Id,
+					MovieId = movie.Id
+				});
+			}
+			await _db.SaveChangesAsync();
 		}
-
-		await _db.SaveChangesAsync();
-
 		return movie.Id;
 	}
 }

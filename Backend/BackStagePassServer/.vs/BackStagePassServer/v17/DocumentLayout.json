@@ -3,20 +3,68 @@
   "WorkspaceRootPath": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\services\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\services\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\dtos\\ratingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\dtos\\ratingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\controllers\\movietapecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\controllers\\movietapecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\controllers\\filmmembercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\controllers\\filmmembercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\dtos\\userresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\dtos\\userresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\models\\movietape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\models\\movietape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\dtos\\filmmemberdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\dtos\\filmmemberdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\controllers\\ratingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\dtos\\userupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\dtos\\userupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\dtos\\uploadmoviewithgenresdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\dtos\\uploadmoviewithgenresdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\dtos\\ratingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\dtos\\ratingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\models\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,14 +83,6 @@
       "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\models\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\controllers\\filmmembercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\controllers\\filmmembercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\dtos\\moviesimpledtoupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\dtos\\moviesimpledtoupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -55,20 +95,12 @@
       "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\dtos\\uploadtapedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\models\\movietape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\models\\movietape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\services\\videoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\services\\videoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\services\\ivideoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\services\\ivideoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\dtos\\filmmemberdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\dtos\\filmmemberdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\dtos\\filmmemberresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -85,10 +117,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\services\\iposterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\services\\iposterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\controllers\\videocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -111,10 +139,6 @@
       "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\services\\tokengenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\services\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\services\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\services\\imovieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\services\\imovieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -129,10 +153,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\services\\backgroundcleanupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\services\\backgroundcleanupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\models\\usertoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -151,20 +171,12 @@
       "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\models\\moviefilmmember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\models\\emailconfirm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\models\\emailconfirm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\dtos\\uploadvideorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\dtos\\uploadvideorequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\dtos\\uploadmoviedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|solutionrelative:backstagepassserver\\dtos\\uploadmoviedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D715F8FF-DD62-4B6F-BEB8-7171F8FB8727}|BackStagePassServer\\BackStagePassServer.csproj|c:\\myprojects\\c# projects\\backstagepass\\backend\\backstagepassserver\\backstagepassserver\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -194,7 +206,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -222,7 +234,176 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserResponseDto.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\UserResponseDto.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\UserResponseDto.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\UserResponseDto.cs",
+              "RelativeToolTip": "BackStagePassServer\\DTOs\\UserResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T11:20:04.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\UserController.cs",
+              "RelativeToolTip": "BackStagePassServer\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T11:01:44.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\User.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\Models\\User.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\User.cs",
+              "RelativeToolTip": "BackStagePassServer\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T12:22:48.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MovieTape.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\MovieTape.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\Models\\MovieTape.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\MovieTape.cs",
+              "RelativeToolTip": "BackStagePassServer\\Models\\MovieTape.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T12:24:17.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "BackStagePassServer\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJMAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T13:35:32.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "MovieTapeController.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\MovieTapeController.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\Controllers\\MovieTapeController.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\MovieTapeController.cs",
+              "RelativeToolTip": "BackStagePassServer\\Controllers\\MovieTapeController.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAwwCMAAABxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T11:56:44.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\Services\\AuthService.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\AuthService.cs",
+              "RelativeToolTip": "BackStagePassServer\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwC4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T13:36:31.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FilmMemberController.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\FilmMemberController.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\Controllers\\FilmMemberController.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\FilmMemberController.cs",
+              "RelativeToolTip": "BackStagePassServer\\Controllers\\FilmMemberController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T09:04:23.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MovieController.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\MovieController.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\Controllers\\MovieController.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\MovieController.cs",
+              "RelativeToolTip": "BackStagePassServer\\Controllers\\MovieController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwPYAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T10:14:00.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MovieService.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\MovieService.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\Services\\MovieService.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\MovieService.cs",
+              "RelativeToolTip": "BackStagePassServer\\Services\\MovieService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwDIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T11:46:47.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FilmMemberDto.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\FilmMemberDto.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\FilmMemberDto.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\FilmMemberDto.cs",
+              "RelativeToolTip": "BackStagePassServer\\DTOs\\FilmMemberDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T10:12:28.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RatingController.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\RatingController.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\Controllers\\RatingController.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\RatingController.cs",
+              "RelativeToolTip": "BackStagePassServer\\Controllers\\RatingController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T08:03:12.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UserUpdateDto.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\UserUpdateDto.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\UserUpdateDto.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\UserUpdateDto.cs",
+              "RelativeToolTip": "BackStagePassServer\\DTOs\\UserUpdateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T11:05:05.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "RatingDto.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\RatingDto.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\RatingDto.cs",
@@ -230,25 +411,11 @@
               "RelativeToolTip": "BackStagePassServer\\DTOs\\RatingDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T08:37:26.683Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-14T08:37:26.683Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RatingController.cs",
-              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\RatingController.cs",
-              "RelativeDocumentMoniker": "BackStagePassServer\\Controllers\\RatingController.cs",
-              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\RatingController.cs",
-              "RelativeToolTip": "BackStagePassServer\\Controllers\\RatingController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwKAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T08:03:12.054Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 18,
               "Title": "GenreDto.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\GenreDto.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\GenreDto.cs",
@@ -260,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 17,
               "Title": "GenreController.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\GenreController.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Controllers\\GenreController.cs",
@@ -268,38 +435,36 @@
               "RelativeToolTip": "BackStagePassServer\\Controllers\\GenreController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T09:56:08.129Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-13T09:56:08.129Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MovieController.cs",
-              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\MovieController.cs",
-              "RelativeDocumentMoniker": "BackStagePassServer\\Controllers\\MovieController.cs",
-              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\MovieController.cs",
-              "RelativeToolTip": "BackStagePassServer\\Controllers\\MovieController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPIAAAAjAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "Movie.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\Movie.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\Models\\Movie.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\Movie.cs",
+              "RelativeToolTip": "BackStagePassServer\\Models\\Movie.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T10:14:00.078Z",
+              "WhenOpened": "2025-06-04T12:23:16.112Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MovieTapeController.cs",
-              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\MovieTapeController.cs",
-              "RelativeDocumentMoniker": "BackStagePassServer\\Controllers\\MovieTapeController.cs",
-              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\MovieTapeController.cs",
-              "RelativeToolTip": "BackStagePassServer\\Controllers\\MovieTapeController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACMAAABxAAAAAAAAAA==",
+              "DocumentIndex": 14,
+              "Title": "UploadMovieWithGenresDto.cs",
+              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\UploadMovieWithGenresDto.cs",
+              "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\UploadMovieWithGenresDto.cs",
+              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\UploadMovieWithGenresDto.cs",
+              "RelativeToolTip": "BackStagePassServer\\DTOs\\UploadMovieWithGenresDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T11:56:44.389Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T10:07:33.985Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 22,
               "Title": "UploadTapeDto.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\UploadTapeDto.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\UploadTapeDto.cs",
@@ -311,7 +476,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 16,
               "Title": "Rating.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\Rating.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Models\\Rating.cs",
@@ -319,36 +484,11 @@
               "RelativeToolTip": "BackStagePassServer\\Models\\Rating.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T12:27:51.121Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T12:27:51.121Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FilmMemberController.cs",
-              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\FilmMemberController.cs",
-              "RelativeDocumentMoniker": "BackStagePassServer\\Controllers\\FilmMemberController.cs",
-              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\FilmMemberController.cs",
-              "RelativeToolTip": "BackStagePassServer\\Controllers\\FilmMemberController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T09:04:23.955Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "BackStagePassServer\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "BackStagePassServer\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T13:35:32.51Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 19,
               "Title": "Genre.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\Genre.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Models\\Genre.cs",
@@ -360,7 +500,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 21,
               "Title": "UpdateTapeDto.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\UpdateTapeDto.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\UpdateTapeDto.cs",
@@ -372,7 +512,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 20,
               "Title": "MovieSimpleDtoUpdate.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\MovieSimpleDtoUpdate.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\MovieSimpleDtoUpdate.cs",
@@ -384,7 +524,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "VideoService.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\VideoService.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Services\\VideoService.cs",
@@ -396,7 +536,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 24,
               "Title": "IVideoService.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\IVideoService.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Services\\IVideoService.cs",
@@ -408,31 +548,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "MovieTape.cs",
-              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\MovieTape.cs",
-              "RelativeDocumentMoniker": "BackStagePassServer\\Models\\MovieTape.cs",
-              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\MovieTape.cs",
-              "RelativeToolTip": "BackStagePassServer\\Models\\MovieTape.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T12:24:17.932Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "FilmMemberDto.cs",
-              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\FilmMemberDto.cs",
-              "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\FilmMemberDto.cs",
-              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\FilmMemberDto.cs",
-              "RelativeToolTip": "BackStagePassServer\\DTOs\\FilmMemberDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T10:12:28.83Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 25,
               "Title": "FilmMemberResponseDto.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\FilmMemberResponseDto.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\FilmMemberResponseDto.cs",
@@ -444,7 +560,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 26,
               "Title": "MovieSimpleDto.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\MovieSimpleDto.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\MovieSimpleDto.cs",
@@ -456,7 +572,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 27,
               "Title": "PosterService.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\PosterService.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Services\\PosterService.cs",
@@ -468,7 +584,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 28,
               "Title": "IPosterService.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\IPosterService.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Services\\IPosterService.cs",
@@ -480,7 +596,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 29,
               "Title": "VideoController.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Controllers\\VideoController.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Controllers\\VideoController.cs",
@@ -492,19 +608,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\User.cs",
-              "RelativeDocumentMoniker": "BackStagePassServer\\Models\\User.cs",
-              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\User.cs",
-              "RelativeToolTip": "BackStagePassServer\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T12:22:48.302Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 30,
               "Title": "FilmMember.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\FilmMember.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Models\\FilmMember.cs",
@@ -516,7 +620,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 31,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Program.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Program.cs",
@@ -528,7 +632,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 33,
               "Title": "TokenGenerator.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\TokenGenerator.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Services\\TokenGenerator.cs",
@@ -540,19 +644,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "MovieService.cs",
-              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\MovieService.cs",
-              "RelativeDocumentMoniker": "BackStagePassServer\\Services\\MovieService.cs",
-              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\MovieService.cs",
-              "RelativeToolTip": "BackStagePassServer\\Services\\MovieService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T11:46:47.196Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 34,
               "Title": "IMovieService.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\IMovieService.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Services\\IMovieService.cs",
@@ -564,7 +656,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 35,
               "Title": "IEmailService.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\IEmailService.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Services\\IEmailService.cs",
@@ -576,7 +668,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 37,
               "Title": "BackgroundCleanupService.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\BackgroundCleanupService.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Services\\BackgroundCleanupService.cs",
@@ -588,7 +680,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 32,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\AppDbContext.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\AppDbContext.cs",
@@ -600,19 +692,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "BackStagePassServer\\Services\\AuthService.cs",
-              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\AuthService.cs",
-              "RelativeToolTip": "BackStagePassServer\\Services\\AuthService.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAIwBUAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T13:36:31.546Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 38,
               "Title": "UserToken.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\UserToken.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Models\\UserToken.cs",
@@ -624,7 +704,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 39,
               "Title": "RessetPassword.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\RessetPassword.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Models\\RessetPassword.cs",
@@ -636,7 +716,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 40,
               "Title": "MovieGenre.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\MovieGenre.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Models\\MovieGenre.cs",
@@ -648,7 +728,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 41,
               "Title": "MovieFilmMember.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\MovieFilmMember.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Models\\MovieFilmMember.cs",
@@ -660,19 +740,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "Movie.cs",
-              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\Movie.cs",
-              "RelativeDocumentMoniker": "BackStagePassServer\\Models\\Movie.cs",
-              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\Movie.cs",
-              "RelativeToolTip": "BackStagePassServer\\Models\\Movie.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T12:23:16.112Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 36,
               "Title": "EmailService.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Services\\EmailService.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Services\\EmailService.cs",
@@ -684,7 +752,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 42,
               "Title": "EmailConfirm.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\Models\\EmailConfirm.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\Models\\EmailConfirm.cs",
@@ -696,7 +764,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 43,
               "Title": "UploadVideoRequest.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\UploadVideoRequest.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\UploadVideoRequest.cs",
@@ -708,19 +776,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "UploadMovieDto.cs",
-              "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\UploadMovieDto.cs",
-              "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\UploadMovieDto.cs",
-              "ToolTip": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\UploadMovieDto.cs",
-              "RelativeToolTip": "BackStagePassServer\\DTOs\\UploadMovieDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T10:07:33.985Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "RegisterDto.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\RegisterDto.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\RegisterDto.cs",
@@ -732,7 +788,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "MovieTapeResponseDto.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\MovieTapeResponseDto.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\MovieTapeResponseDto.cs",
@@ -744,7 +800,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 46,
               "Title": "MovieListDto.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\MovieListDto.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\MovieListDto.cs",
@@ -756,7 +812,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 47,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\DTOs\\LoginDto.cs",
               "RelativeDocumentMoniker": "BackStagePassServer\\DTOs\\LoginDto.cs",
@@ -768,7 +824,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\MyProjects\\c# Projects\\BackstagePass\\Backend\\BackStagePassServer\\BackStagePassServer\\appsettings.json",
               "RelativeDocumentMoniker": "BackStagePassServer\\appsettings.json",

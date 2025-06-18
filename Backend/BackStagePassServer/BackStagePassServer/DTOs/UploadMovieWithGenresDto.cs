@@ -7,5 +7,5 @@ public class UploadMovieWithGenresDto
 	public float Rating { get; set; }
 	public DateTime ReleaseDate { get; set; }
 	public IFormFile Poster { get; set; }
-	public List<string>? Genres { get; set; } = new List<string>();
+	public List<string>? Genres { get; set; }
 }

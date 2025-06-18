@@ -24,6 +24,9 @@ public class AuthService
 		if (user.Role == null)
 			throw new Exception("Email not confirmed");
 
+		if (user.IsBanned == 1)
+			throw new Exception("User is banned");
+
 		return await GenerateTokensAsync(user);
 	}
 
@@ -39,6 +42,9 @@ public class AuthService
 		// Удаляем старый токен
 		_db.UserTokens.Remove(token);
 		await _db.SaveChangesAsync();
+
+		if (token.User.IsBanned == 1)
+			throw new Exception("User is banned");
 
 		return await GenerateTokensAsync(token.User);
 	}
