@@ -72,11 +72,7 @@ public class RatingController : ControllerBase
 		return Ok(new { message = "Rating submitted successfully." });
 	}
 
-
 	
-
-	// ... inside RatingController ...
-
 	// Get all ratings for a specific movie
 	[HttpGet("movie/{movieId:int}")]
 	public async Task<IActionResult> GetRatingsByMovieId(int movieId)
@@ -106,8 +102,7 @@ public class RatingController : ControllerBase
 		var user = await _authService.GetUserByAccessToken(accessToken);
 		if (user == null)
 			return Unauthorized(new { error = "Invalid access token" });
-		if (user.Role == null)
-			return BadRequest(new { error = "Email not confirmed. Please confirm your email before deleting ratings." });
+
 		var ratings = await _db.Ratings
 			.Where(r => r.UserId == user.Id)
 			.Select(r => new RatingDto
@@ -130,8 +125,7 @@ public class RatingController : ControllerBase
 		var user = await _authService.GetUserByAccessToken(accessToken);
 		if (user == null)
 			return Unauthorized(new { error = "Invalid access token" });
-		if (user.Role == null)
-			return BadRequest(new { error = "Email not confirmed. Please confirm your email before deleting ratings." });
+
 		var rating = await _db.Ratings
 			.Where(r => r.MovieId == movieId && r.UserId == user.Id)
 			.Select(r => new RatingDto
@@ -144,7 +138,7 @@ public class RatingController : ControllerBase
 			.FirstOrDefaultAsync();
 
 		if (rating == null)
-			return NotFound(new { error = "Rating not found." });
+			return NoContent();
 
 		return Ok(rating);
 	}

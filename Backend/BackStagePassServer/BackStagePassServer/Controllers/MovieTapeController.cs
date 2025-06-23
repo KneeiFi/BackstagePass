@@ -87,7 +87,7 @@ public class MovieTapeController : ControllerBase
 		.FirstOrDefaultAsync();
 
 		if (tape == null)
-			return NotFound(new { error = "Movie tape not found" });
+			return NoContent();
 
 		return Ok(tape);
 	}
@@ -110,7 +110,7 @@ public class MovieTapeController : ControllerBase
 		return Ok(tapes);
 	}
 
-	[HttpGet("movie/by-title/{movieTitle}")]
+	[HttpGet("movie/by-exact-title/{movieTitle}")]
 	public async Task<IActionResult> GetMovieTapesByMovieTitle(string movieTitle)
 	{
 		if (string.IsNullOrWhiteSpace(movieTitle))
@@ -131,6 +131,37 @@ public class MovieTapeController : ControllerBase
 		return Ok(tapes);
 	}
 
+	[HttpGet("movie/by-title/{movieTitle}")]
+	public async Task<IActionResult> GetMovieTapesByMovieTitle(string movieTitle,[FromQuery] int pageNumber = 1,[FromQuery] int pageSize = 10)
+	{
+		if (string.IsNullOrWhiteSpace(movieTitle))
+			return BadRequest(new { error = "Movie title is required." });
+
+		if (pageNumber < 1 || pageSize < 1)
+			return BadRequest(new { error = "Invalid page parameters." });
+
+		var offset = (pageNumber - 1) * pageSize;
+
+		var query = @"
+        SELECT * FROM ""MovieTapes""
+        WHERE similarity(""TapeTitle"", CAST({0} AS text)) > 0.01
+        ORDER BY similarity(""TapeTitle"", CAST({0} AS text)) DESC
+        OFFSET {1} LIMIT {2}";
+
+		var tapes = await _db.MovieTapes
+			.FromSqlRaw(query, movieTitle, offset, pageSize)
+			.Select(mt => new MovieTapeResponseDto
+			{
+				MovieId = mt.MovieId,
+				TapeTitle = mt.TapeTitle,
+				mediaType = mt.MediaType,
+				VideoUrl = mt.VideoUrl,
+				ThumbnailUrl = $"{Request.Scheme}://{Request.Host}/posters_480p/{mt.ThumbnailUrl}"
+			})
+			.ToListAsync();
+
+		return Ok(tapes);
+	}
 
 	[HttpDelete("{id:int}")]
 	public async Task<IActionResult> DeleteMovieTape(int id, 

@@ -3,6 +3,7 @@ using BackStagePassServer.Models;
 using BackStagePassServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
 
 namespace BackStagePassServer.Controllers;
 
@@ -88,7 +89,7 @@ public class MovieController : ControllerBase
 
 		if (movie == null)
 		{
-			return NotFound();
+			return NoContent();
 		}
 
 		return Ok(movie);
@@ -111,13 +112,13 @@ public class MovieController : ControllerBase
 		.FirstOrDefaultAsync(m => m.Id == id);
 
 		if (movie == null)
-			return NotFound();
+			return NoContent();
 
 		return Ok(movie);
 	}
 
 	[HttpGet("all")]
-	public async Task<IActionResult> GetAllMovies([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+	public async Task<IActionResult> GetAllMoviesOrderByRating([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
 	{
 		if (page < 1) page = 1;
 		if (pageSize < 1) pageSize = 10;
@@ -127,7 +128,8 @@ public class MovieController : ControllerBase
 
 		var totalCount = await query.CountAsync();
 		var movies = await query
-			.OrderBy(m => m.Id)
+			.OrderByDescending(m => m.Rating)
+			.ThenBy(m => m.Id)
 			.Skip((page - 1) * pageSize)
 			.Take(pageSize)
 			.Select(m => new MovieListDto
@@ -139,7 +141,151 @@ public class MovieController : ControllerBase
 				PosterURL = $"{Request.Scheme}://{Request.Host}/posters_480p/{m.PosterURL}",
 				Genres = m.MovieGenres.Select(g => g.Genre.Name).ToList(),
 			})
-		   .ToListAsync();
+			.ToListAsync();
+
+		return Ok(new
+		{
+			TotalCount = totalCount,
+			Page = page,
+			PageSize = pageSize,
+			Movies = movies
+		});
+	}
+
+	[HttpGet("search/{title}")]
+	public async Task<IActionResult> SearchMoviesByTitle(string title,[FromQuery] int page = 1,[FromQuery] int pageSize = 10)
+	{
+		if (string.IsNullOrWhiteSpace(title))
+			return BadRequest(new { error = "Title is required." });
+
+		if (page < 1) page = 1;
+		if (pageSize < 1) pageSize = 10;
+
+		var offset = (page - 1) * pageSize;
+
+		
+		int totalCount;
+
+		await using (var connection = new NpgsqlConnection(_db.Database.GetConnectionString()))
+		{
+			await connection.OpenAsync();
+
+			await using (var command = connection.CreateCommand())
+			{
+				command.CommandText = @"SELECT COUNT(*) FROM ""Movies"" WHERE similarity(""Title"", @title) > 0.01";
+				var param = command.CreateParameter();
+				param.ParameterName = "@title";
+				param.Value = title;
+				command.Parameters.Add(param);
+
+				var result = await command.ExecuteScalarAsync();
+				totalCount = Convert.ToInt32(result);
+			}
+		}
+
+		// SQL-запрос на выборку
+		var rawSql = @"
+        SELECT * FROM ""Movies""
+        WHERE similarity(""Title"", CAST({0} AS text)) > 0.01
+        ORDER BY similarity(""Title"", CAST({0} AS text)) DESC
+        OFFSET {1} LIMIT {2}";
+
+		// Получаем фильмы с жанрами
+		var matchedMovies = await _db.Movies
+			.FromSqlRaw(rawSql, title, offset, pageSize)
+			.Include(m => m.MovieGenres).ThenInclude(mg => mg.Genre)
+			.ToListAsync();
+
+		var movies = matchedMovies.Select(m => new MovieListDto
+		{
+			Id = m.Id,
+			Title = m.Title,
+			Rating = m.Rating,
+			ReleaseDate = m.ReleaseDate,
+			PosterURL = $"{Request.Scheme}://{Request.Host}/posters_480p/{m.PosterURL}",
+			Genres = m.MovieGenres.Select(g => g.Genre.Name).ToList(),
+		}).ToList();
+
+		return Ok(new
+		{
+			TotalCount = totalCount,
+			Page = page,
+			PageSize = pageSize,
+			Movies = movies
+		});
+	}
+
+	[HttpGet("search/genre/{genreName}")]
+	public async Task<IActionResult> SearchMoviesByGenre(string genreName, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+	{
+		if (string.IsNullOrWhiteSpace(genreName))
+			return BadRequest(new { error = "Genre name is required." });
+
+		if (page < 1) page = 1;
+		if (pageSize < 1) pageSize = 10;
+
+		var query = _db.Movies
+		.Include(m => m.MovieGenres).ThenInclude(mg => mg.Genre)
+		.Where(m => m.MovieGenres.Any(mg => mg.Genre.Name.ToLower() == genreName.ToLower()));
+
+		var totalCount = await query.CountAsync();
+
+		var movies = await query
+		.OrderByDescending(m => m.Rating)
+		.ThenBy(m => m.Id)
+		.Skip((page - 1) * pageSize)
+		.Take(pageSize)
+		.Select(m => new MovieListDto
+		{
+			Id = m.Id,
+			Title = m.Title,
+			Rating = m.Rating,
+			ReleaseDate = m.ReleaseDate,
+			PosterURL = $"{Request.Scheme}://{Request.Host}/posters_480p/{m.PosterURL}",
+			Genres = m.MovieGenres.Select(g => g.Genre.Name).ToList(),
+		})
+		.ToListAsync();
+
+		return Ok(new
+		{
+			TotalCount = totalCount,
+			Page = page,
+			PageSize = pageSize,
+			Movies = movies
+		});
+	}
+
+	[HttpGet("search/film-member/{fio}")]
+	public async Task<IActionResult> SearchMoviesByFilmMemberFio(string fio, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+	{
+		if (string.IsNullOrWhiteSpace(fio))
+			return BadRequest(new { error = "Film member FIO is required." });
+
+		if (page < 1) page = 1;
+		if (pageSize < 1) pageSize = 10;
+
+		var query = _db.Movies
+		.Include(m => m.MovieGenres).ThenInclude(mg => mg.Genre)
+		.Include(m => m.MovieFilmMembers).ThenInclude(mfm => mfm.FilmMember)
+		.Where(m => m.MovieFilmMembers.Any(mfm => mfm.FilmMember.FIO.ToLower().Contains(fio.ToLower())));
+
+		var totalCount = await query.CountAsync();
+
+		var movies = await query
+		.OrderByDescending(m => m.Rating)
+		.ThenBy(m => m.Id)
+		.Skip((page - 1) * pageSize)
+		.Take(pageSize)
+		.Select(m => new MovieListDto
+		{
+			Id = m.Id,
+			Title = m.Title,
+			Rating = m.Rating,
+			ReleaseDate = m.ReleaseDate,
+			PosterURL = $"{Request.Scheme}://{Request.Host}/posters_480p/{m.PosterURL}",
+			Genres = m.MovieGenres.Select(g => g.Genre.Name).ToList(),
+		})
+		.ToListAsync();
 
 		return Ok(new
 		{
@@ -173,7 +319,6 @@ public class MovieController : ControllerBase
 		if (movie == null)
 			return NotFound(new { error = "Movie not found." });
 
-		
 		// Remove related MovieGenres
 		_db.MovieGenres.RemoveRange(movie.MovieGenres);
 

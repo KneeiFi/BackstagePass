@@ -4,6 +4,7 @@ namespace BackStagePassServer.DTOs;
 
 public class MovieTapeResponseDto
 {
+	public int Id { get; set; }
 	public int MovieId { get; set; }
 	public string TapeTitle { get; set; }
 	public MediaType mediaType { get; set; }

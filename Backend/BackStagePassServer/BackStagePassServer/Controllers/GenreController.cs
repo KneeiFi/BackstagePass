@@ -39,7 +39,7 @@ public class GenreController : ControllerBase
 			.FirstOrDefaultAsync(m => m.Id == movieId);
 
 		if (movie == null)
-			return NotFound(new { error = "Movie not found." });
+			return NoContent();
 
 		var genres = movie.MovieGenres
 			.Select(mg => new GenreDto 
@@ -69,7 +69,7 @@ public class GenreController : ControllerBase
 			.FirstOrDefaultAsync();
 
 		if (genre == null)
-			return NotFound(new { error = "Genre not found." });
+			return NoContent();
 
 		return Ok(genre);
 	}
@@ -88,7 +88,7 @@ public class GenreController : ControllerBase
 			.FirstOrDefaultAsync();
 
 		if (genre == null)
-			return NotFound(new { error = "Genre not found." });
+			return NoContent();
 
 		return Ok(genre);
 	}

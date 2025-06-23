@@ -130,8 +130,6 @@ public class UserController : ControllerBase
 		return Ok(new { message = "User has been banned successfully." });
 	}
 
-
-
 	[HttpGet("me")]
 	public async Task<IActionResult> GetCurrentUser([FromHeader(Name = "Authorization")] string accessToken)
 	{

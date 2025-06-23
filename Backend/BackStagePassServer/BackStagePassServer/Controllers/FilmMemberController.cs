@@ -29,7 +29,7 @@ public class FilmMemberController : ControllerBase
 		.FirstOrDefaultAsync(fm => fm.Id == id);
 
 		if (filmMember == null)
-			return NotFound("Film member not found.");
+			return NoContent();
 
 		var response = new FilmMemberResponseDto
 		{
@@ -39,6 +39,29 @@ public class FilmMemberController : ControllerBase
 			PictureUrl = filmMember.PictureUrl != null
 				? $"{Request.Scheme}://{Request.Host}/profiles/{filmMember.PictureUrl}"
 				: null
+		};
+
+		return Ok(response);
+	}
+
+	// Gets a FilmMember by FIO
+	[HttpGet("by-fio/{fio}")]
+	public async Task<IActionResult> GetFilmMemberByFio(string fio)
+	{
+		var filmMember = await _context.FilmMembers
+		.FirstOrDefaultAsync(fm => fm.FIO == fio);
+
+		if (filmMember == null)
+			return NoContent();
+
+		var response = new FilmMemberResponseDto
+		{
+			Id = filmMember.Id,
+			FIO = filmMember.FIO,
+			Role = filmMember.Role,
+			PictureUrl = filmMember.PictureUrl != null
+		? $"{Request.Scheme}://{Request.Host}/profiles/{filmMember.PictureUrl}"
+		: null
 		};
 
 		return Ok(response);
@@ -54,7 +77,7 @@ public class FilmMemberController : ControllerBase
 			.FirstOrDefaultAsync(m => m.Id == movieId);
 
 		if (movie == null)
-			return NotFound("Movie not found.");
+			return NoContent();
 
 		var filmMembers = movie.MovieFilmMembers
 		.Select(mfm => new FilmMemberResponseDto
