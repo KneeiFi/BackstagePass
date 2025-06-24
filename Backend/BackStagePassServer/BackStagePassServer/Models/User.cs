@@ -16,4 +16,6 @@ public class User
 	public ICollection<Movie> Movies { get; set; }
 	public ICollection<UserToken> Tokens { get; set; }
 	public ICollection<Rating> Ratings { get; set; }
+	public ICollection<Comment> Comments { get; set; }
+	public ICollection<LikeComment> LikeComments { get; set; }
 }

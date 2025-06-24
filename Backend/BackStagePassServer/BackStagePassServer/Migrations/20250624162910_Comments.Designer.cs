@@ -3,6 +3,7 @@ using System;
 using BackStagePassServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BackStagePassServer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250624162910_Comments")]
+    partial class Comments
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,33 +24,6 @@ namespace BackStagePassServer.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("BackStagePassServer.Models.Comment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("MovieId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MovieId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Comments");
-                });
 
             modelBuilder.Entity("BackStagePassServer.Models.EmailConfirm", b =>
                 {
@@ -112,32 +88,6 @@ namespace BackStagePassServer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Genres");
-                });
-
-            modelBuilder.Entity("BackStagePassServer.Models.LikeComment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CommentId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Type")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CommentId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("LikeComments");
                 });
 
             modelBuilder.Entity("BackStagePassServer.Models.Movie", b =>
@@ -379,44 +329,6 @@ namespace BackStagePassServer.Migrations
                     b.ToTable("UserTokens");
                 });
 
-            modelBuilder.Entity("BackStagePassServer.Models.Comment", b =>
-                {
-                    b.HasOne("BackStagePassServer.Models.Movie", "Movie")
-                        .WithMany("Comments")
-                        .HasForeignKey("MovieId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BackStagePassServer.Models.User", "User")
-                        .WithMany("Comments")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Movie");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("BackStagePassServer.Models.LikeComment", b =>
-                {
-                    b.HasOne("BackStagePassServer.Models.Comment", "Comment")
-                        .WithMany("LikeComments")
-                        .HasForeignKey("CommentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BackStagePassServer.Models.User", "User")
-                        .WithMany("LikeComments")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Comment");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("BackStagePassServer.Models.Movie", b =>
                 {
                     b.HasOne("BackStagePassServer.Models.User", "User")
@@ -507,11 +419,6 @@ namespace BackStagePassServer.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("BackStagePassServer.Models.Comment", b =>
-                {
-                    b.Navigation("LikeComments");
-                });
-
             modelBuilder.Entity("BackStagePassServer.Models.FilmMember", b =>
                 {
                     b.Navigation("MovieFilmMembers");
@@ -524,8 +431,6 @@ namespace BackStagePassServer.Migrations
 
             modelBuilder.Entity("BackStagePassServer.Models.Movie", b =>
                 {
-                    b.Navigation("Comments");
-
                     b.Navigation("MovieFilmMembers");
 
                     b.Navigation("MovieGenres");
@@ -537,10 +442,6 @@ namespace BackStagePassServer.Migrations
 
             modelBuilder.Entity("BackStagePassServer.Models.User", b =>
                 {
-                    b.Navigation("Comments");
-
-                    b.Navigation("LikeComments");
-
                     b.Navigation("Movies");
 
                     b.Navigation("Ratings");

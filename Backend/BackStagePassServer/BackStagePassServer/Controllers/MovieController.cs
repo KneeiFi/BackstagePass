@@ -325,6 +325,13 @@ public class MovieController : ControllerBase
 		// Remove related MovieFilmMembers
 		_db.MovieFilmMembers.RemoveRange(movie.MovieFilmMembers);
 
+		// Remove Comments and LikeComments
+		var comments = _db.Comments.Where(c => c.MovieId == id).ToList();
+		var commentIds = comments.Select(c => c.Id).ToList();
+		var likeComments = _db.LikeComments.Where(lc => commentIds.Contains(lc.CommentId)).ToList();
+		_db.LikeComments.RemoveRange(likeComments);
+		_db.Comments.RemoveRange(comments);
+
 		// Before removing tapes from the database
 		foreach (var tape in movie.Tapes)
 		{

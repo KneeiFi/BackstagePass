@@ -78,6 +78,7 @@ public class MovieTapeController : ControllerBase
 		.Where(mt => mt.Id == id)
 		.Select(mt => new MovieTapeResponseDto
 		{
+			Id = mt.Id,
 			MovieId = mt.MovieId,
 			TapeTitle = mt.TapeTitle,
 			mediaType = mt.MediaType,
@@ -99,6 +100,7 @@ public class MovieTapeController : ControllerBase
 		.Where(mt => mt.MovieId == movieId)
 		.Select(mt => new MovieTapeResponseDto
 		{
+			Id = mt.Id,
 			MovieId = mt.MovieId,
 			TapeTitle = mt.TapeTitle,
 			mediaType = mt.MediaType,
@@ -120,6 +122,7 @@ public class MovieTapeController : ControllerBase
 		.Where(mt => EF.Functions.Like(mt.TapeTitle, $"%{movieTitle}%"))
 		.Select(mt => new MovieTapeResponseDto
 		{
+			Id = mt.Id,
 			MovieId = mt.MovieId,
 			TapeTitle = mt.TapeTitle,
 			mediaType = mt.MediaType,
@@ -152,6 +155,7 @@ public class MovieTapeController : ControllerBase
 			.FromSqlRaw(query, movieTitle, offset, pageSize)
 			.Select(mt => new MovieTapeResponseDto
 			{
+				Id = mt.Id,
 				MovieId = mt.MovieId,
 				TapeTitle = mt.TapeTitle,
 				mediaType = mt.MediaType,

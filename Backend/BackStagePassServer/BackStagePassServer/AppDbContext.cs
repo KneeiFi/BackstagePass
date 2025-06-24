@@ -16,6 +16,8 @@ public class AppDbContext : DbContext
 	public DbSet<FilmMember> FilmMembers { get; set; }
 	public DbSet<MovieFilmMember> MovieFilmMembers { get; set; }
 	public DbSet<Rating> Ratings { get; set; }
+	public DbSet<Comment> Comments { get; set; }
+	public DbSet<LikeComment> LikeComments { get; set; }
 
 	public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -70,5 +72,27 @@ public class AppDbContext : DbContext
 			.HasOne(mt => mt.Movie)
 			.WithMany(m => m.Tapes)
 			.HasForeignKey(mt => mt.MovieId);
+
+		// Comment: зв’язок User -> Comment -> Movie
+		modelBuilder.Entity<Comment>()
+			.HasOne(c => c.User)
+			.WithMany(u => u.Comments)
+			.HasForeignKey(c => c.UserId);
+
+		modelBuilder.Entity<Comment>()
+			.HasOne(c => c.Movie)
+			.WithMany(m => m.Comments)
+			.HasForeignKey(c => c.MovieId);
+
+		// LikeComment: зв’язок Comment <-> User
+		modelBuilder.Entity<LikeComment>()
+			.HasOne(lc => lc.User)
+			.WithMany(u => u.LikeComments)
+			.HasForeignKey(lc => lc.UserId);
+
+		modelBuilder.Entity<LikeComment>()
+			.HasOne(lc => lc.Comment)
+			.WithMany(c => c.LikeComments)
+			.HasForeignKey(lc => lc.CommentId);
 	}
 }
