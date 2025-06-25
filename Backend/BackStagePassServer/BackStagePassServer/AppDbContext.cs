@@ -18,6 +18,7 @@ public class AppDbContext : DbContext
 	public DbSet<Rating> Ratings { get; set; }
 	public DbSet<Comment> Comments { get; set; }
 	public DbSet<LikeComment> LikeComments { get; set; }
+	public DbSet<Playlist> Playlists { get; set; }
 
 	public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -94,5 +95,26 @@ public class AppDbContext : DbContext
 			.HasOne(lc => lc.Comment)
 			.WithMany(c => c.LikeComments)
 			.HasForeignKey(lc => lc.CommentId);
+
+		// Playlist: зв’язок із User та Movie
+		modelBuilder.Entity<Playlist>()
+			.HasOne(p => p.User)
+			.WithMany(u => u.Playlists)
+			.HasForeignKey(p => p.UserId);
+
+		modelBuilder.Entity<Playlist>()
+			.HasOne(p => p.Movie)
+			.WithMany(m => m.Playlists)
+			.HasForeignKey(p => p.MovieId);
+
+		// Composite index on Playlist: UserId, Title, MovieId
+		modelBuilder.Entity<Playlist>()
+		.HasIndex(p => new { p.UserId, p.Title, p.MovieId });
+
+		// I didn't even know about this but now i can do shitty things like this playlist logic and still this will be fast anough probably :)
+		modelBuilder.Entity<Playlist>()
+	    .HasIndex(p => new { p.UserId, p.Title });
+
+
 	}
 }

@@ -1,0 +1,2 @@
+C:\MyProjects\c# Projects\BackstagePass\Backend\BackStagePassServer\BackStagePassServer\wwwroot\posters_480p\ad86e48e-c24c-48b0-ada8-a89d0b0dd2e2.jpg
+C:\MyProjects\c# Projects\BackstagePass\Backend\BackStagePassServer\BackStagePassServer\wwwroot\posters_original\ad86e48e-c24c-48b0-ada8-a89d0b0dd2e2.jpg

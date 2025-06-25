@@ -3,6 +3,7 @@ using System;
 using BackStagePassServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BackStagePassServer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250625142025_playlisttimecreated")]
+    partial class playlisttimecreated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -255,41 +258,6 @@ namespace BackStagePassServer.Migrations
                     b.ToTable("MovieTapes");
                 });
 
-            modelBuilder.Entity("BackStagePassServer.Models.Playlist", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("text");
-
-                    b.Property<int>("MovieId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MovieId");
-
-                    b.HasIndex("UserId", "Title");
-
-                    b.HasIndex("UserId", "Title", "MovieId");
-
-                    b.ToTable("Playlists");
-                });
-
             modelBuilder.Entity("BackStagePassServer.Models.Rating", b =>
                 {
                     b.Property<int>("Id")
@@ -512,25 +480,6 @@ namespace BackStagePassServer.Migrations
                     b.Navigation("Movie");
                 });
 
-            modelBuilder.Entity("BackStagePassServer.Models.Playlist", b =>
-                {
-                    b.HasOne("BackStagePassServer.Models.Movie", "Movie")
-                        .WithMany("Playlists")
-                        .HasForeignKey("MovieId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BackStagePassServer.Models.User", "User")
-                        .WithMany("Playlists")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Movie");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("BackStagePassServer.Models.Rating", b =>
                 {
                     b.HasOne("BackStagePassServer.Models.Movie", "Movie")
@@ -584,8 +533,6 @@ namespace BackStagePassServer.Migrations
 
                     b.Navigation("MovieGenres");
 
-                    b.Navigation("Playlists");
-
                     b.Navigation("Ratings");
 
                     b.Navigation("Tapes");
@@ -598,8 +545,6 @@ namespace BackStagePassServer.Migrations
                     b.Navigation("LikeComments");
 
                     b.Navigation("Movies");
-
-                    b.Navigation("Playlists");
 
                     b.Navigation("Ratings");
 

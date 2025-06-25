@@ -18,4 +18,5 @@ public class User
 	public ICollection<Rating> Ratings { get; set; }
 	public ICollection<Comment> Comments { get; set; }
 	public ICollection<LikeComment> LikeComments { get; set; }
+	public ICollection<Playlist> Playlists { get; set; }
 }
