@@ -1,5 +1,6 @@
 using BackStagePassServer;
 using BackStagePassServer.Services;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -11,7 +12,9 @@ builder.Services.AddScoped<IEmailService, EmailService>();
 
 builder.Services.AddHostedService<BackgroundCleanupService>();
 
-builder.Services.AddScoped<IVideoService, VideoService>();
+//builder.Services.AddScoped<IVideoService, VideoService>();
+builder.Services.AddScoped<IVideoService, VideoServiceHLS>();
+
 builder.Services.AddScoped<IPosterService, PosterService>();
 builder.Services.AddScoped<IMovieService, MovieService>();
 
@@ -51,6 +54,14 @@ builder.Services.AddSwaggerGen(c =>
 	});
 });
 
+builder.Services.AddCors(options =>
+{
+	options.AddDefaultPolicy(policy =>
+	{
+		policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+	});
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -59,6 +70,20 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors();
+
+app.UseStaticFiles(new StaticFileOptions
+{
+	ContentTypeProvider = new FileExtensionContentTypeProvider
+	{
+		Mappings =
+		{
+			[".m3u8"] = "application/vnd.apple.mpegurl",
+			[".ts"] = "video/mp2t"
+		}
+	}
+});
 
 app.UseStaticFiles();
 

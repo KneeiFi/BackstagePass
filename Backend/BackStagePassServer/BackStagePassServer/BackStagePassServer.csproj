@@ -23,7 +23,14 @@
     <Folder Include="wwwroot\posters_480p\" />
     <Folder Include="wwwroot\profiles\" />
     <Folder Include="wwwroot\posters_original\" />
-    <Folder Include="wwwroot\videos\" />
+    <Folder Include="wwwroot\videos\stream\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="ffmpeg\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
