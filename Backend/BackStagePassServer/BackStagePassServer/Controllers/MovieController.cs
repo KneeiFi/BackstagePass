@@ -296,6 +296,44 @@ public class MovieController : ControllerBase
 		});
 	}
 
+	[HttpGet("user/{userId:int}")]
+	public async Task<IActionResult> GetMoviesByUserId(int userId, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+	{
+		if (page < 1) page = 1;
+		if (pageSize < 1) pageSize = 10;
+
+		var query = _db.Movies
+			.Include(m => m.MovieGenres).ThenInclude(mg => mg.Genre)
+			.Where(m => m.UserId == userId);
+
+		var totalCount = await query.CountAsync();
+
+		var movies = await query
+			.OrderByDescending(m => m.ReleaseDate)
+			.ThenBy(m => m.Id)
+			.Skip((page - 1) * pageSize)
+			.Take(pageSize)
+			.Select(m => new MovieListDto
+			{
+				Id = m.Id,
+				Title = m.Title,
+				Rating = m.Rating,
+				ReleaseDate = m.ReleaseDate,
+				PosterURL = $"{Request.Scheme}://{Request.Host}/posters_480p/{m.PosterURL}",
+				Genres = m.MovieGenres.Select(g => g.Genre.Name).ToList(),
+			})
+			.ToListAsync();
+
+		return Ok(new
+		{
+			TotalCount = totalCount,
+			Page = page,
+			PageSize = pageSize,
+			Movies = movies
+		});
+	}
+
+
 	[HttpDelete("{id:int}")]
 	public async Task<IActionResult> DeleteMovie(int id,
 		[FromHeader(Name = "Authorization")] string accessToken)
