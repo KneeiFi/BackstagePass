@@ -19,6 +19,7 @@ public class AppDbContext : DbContext
 	public DbSet<Comment> Comments { get; set; }
 	public DbSet<LikeComment> LikeComments { get; set; }
 	public DbSet<Playlist> Playlists { get; set; }
+	public DbSet<UserSubscription> UserSubscriptions { get; set; }
 
 	public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -115,6 +116,18 @@ public class AppDbContext : DbContext
 		modelBuilder.Entity<Playlist>()
 	    .HasIndex(p => new { p.UserId, p.Title });
 
+		// UserSubscription: дві навігації на User
+		modelBuilder.Entity<UserSubscription>()
+			.HasOne(us => us.User1)
+			.WithMany(u => u.Subscriptions)
+			.HasForeignKey(us => us.User1Id)
+			.OnDelete(DeleteBehavior.Restrict); // щоб уникнути каскадних конфліктів
+
+		modelBuilder.Entity<UserSubscription>()
+			.HasOne(us => us.User2)
+			.WithMany(u => u.Subscribers)
+			.HasForeignKey(us => us.User2Id)
+			.OnDelete(DeleteBehavior.Restrict);
 
 	}
 }

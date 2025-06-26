@@ -20,7 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
     <Folder Include="wwwroot\posters_480p\" />
     <Folder Include="wwwroot\profiles\" />
     <Folder Include="wwwroot\posters_original\" />

@@ -130,6 +130,34 @@ public class UserController : ControllerBase
 		return Ok(new { message = "User has been banned successfully." });
 	}
 
+	[HttpPost("unban/{id:int}")]
+	public async Task<IActionResult> UnbanUserById(int id,
+		[FromHeader(Name = "Authorization")] string accessToken)
+	{
+		if (string.IsNullOrEmpty(accessToken))
+			return Unauthorized(new { error = "Access token is missing." });
+
+		var adminUser = await _authService.GetUserByAccessToken(accessToken);
+
+		if (adminUser == null)
+			return Unauthorized(new { error = "Invalid access token." });
+
+		if (adminUser.Role == null || adminUser.Role != UserRole.Admin)
+			return BadRequest(new { error = "Only admins can unban users." });
+
+		var user = await _db.Users.FindAsync(id);
+		if (user == null)
+			return NotFound(new { error = "User not found." });
+
+		if (user.IsBanned == 0)
+			return BadRequest(new { error = "User is not banned." });
+
+		user.IsBanned = 0;
+		_db.Users.Update(user);
+		await _db.SaveChangesAsync();
+		return Ok(new { message = "User has been unbanned successfully." });
+	}
+
 	[HttpGet("me")]
 	public async Task<IActionResult> GetCurrentUser([FromHeader(Name = "Authorization")] string accessToken)
 	{

@@ -19,4 +19,10 @@ public class User
 	public ICollection<Comment> Comments { get; set; }
 	public ICollection<LikeComment> LikeComments { get; set; }
 	public ICollection<Playlist> Playlists { get; set; }
+
+	// Подписки (я подписался на других)
+	public ICollection<UserSubscription> Subscriptions { get; set; }
+
+	// Подписчики (на меня подписались)
+	public ICollection<UserSubscription> Subscribers { get; set; }
 }
