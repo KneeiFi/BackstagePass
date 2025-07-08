@@ -1,5 +1,6 @@
 using BackStagePassServer;
 using BackStagePassServer.Services;
+using BackStagePassServer.Web_sockets_stuff;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -17,6 +18,11 @@ builder.Services.AddScoped<IVideoService, VideoServiceHLS>();
 
 builder.Services.AddScoped<IPosterService, PosterService>();
 builder.Services.AddScoped<IMovieService, MovieService>();
+
+
+// Add SignalR services for real-time communication
+builder.Services.AddSignalR();
+
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 	options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -56,9 +62,23 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddCors(options =>
 {
-	options.AddDefaultPolicy(policy =>
+	// Для REST API
+	options.AddPolicy("Default", policy =>
 	{
-		policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+		policy
+			.AllowAnyOrigin()
+			.AllowAnyMethod()
+			.AllowAnyHeader();
+	});
+
+	// Для SignalR
+	options.AddPolicy("SignalR", policy =>
+	{
+		policy
+			.WithOrigins("http://localhost:5500", "http://127.0.0.1:5500") // заменить на frontend origin
+			.AllowAnyHeader()
+			.AllowAnyMethod()
+			.AllowCredentials(); // обязательно для SignalR
 	});
 });
 
@@ -71,7 +91,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors();
+// Применяем Default для обычных запросов
+app.UseCors("Default");
+
 
 app.UseStaticFiles(new StaticFileOptions
 {
@@ -85,6 +107,13 @@ app.UseStaticFiles(new StaticFileOptions
 	}
 });
 
+
+
+// Применяем отдельную CORS-политику только для SignalR
+app.MapHub<WatchTogetherHub>("/watch").RequireCors("SignalR");
+
+
+
 app.UseStaticFiles();
 
 app.UseHttpsRedirection();
@@ -92,5 +121,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 app.Run();
