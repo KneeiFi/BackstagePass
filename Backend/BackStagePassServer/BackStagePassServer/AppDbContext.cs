@@ -20,7 +20,8 @@ public class AppDbContext : DbContext
 	public DbSet<LikeComment> LikeComments { get; set; }
 	public DbSet<Playlist> Playlists { get; set; }
 	public DbSet<UserSubscription> UserSubscriptions { get; set; }
-
+	public DbSet<WatchRoom> WatchRooms { get; set; } = default!;
+	public DbSet<WatchRoomUser> WatchRoomUsers { get; set; } = default!;
 	public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -128,6 +129,17 @@ public class AppDbContext : DbContext
 			.WithMany(u => u.Subscribers)
 			.HasForeignKey(us => us.User2Id)
 			.OnDelete(DeleteBehavior.Restrict);
+
+		// WatchRoom: 
+		modelBuilder.Entity<WatchRoom>()
+		.HasIndex(r => r.RoomCode)
+		.IsUnique(); // Чтобы комната имела уникальный код
+
+		modelBuilder.Entity<WatchRoomUser>()
+			.HasOne(u => u.WatchRoom)
+			.WithMany(r => r.Users)
+			.HasForeignKey(u => u.WatchRoomId)
+			.OnDelete(DeleteBehavior.Cascade); // Если комната удалена — удалить и участников
 
 	}
 }

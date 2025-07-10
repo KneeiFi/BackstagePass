@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BackStagePassServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3c3aa9efe05ef4cb2ce4f029e117519c087f6c1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f72bad9c57294474cc15d2828d1c1e1795f3cf5")]
 [assembly: System.Reflection.AssemblyProductAttribute("BackStagePassServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BackStagePassServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

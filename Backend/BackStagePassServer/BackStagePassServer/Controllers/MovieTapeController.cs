@@ -40,20 +40,21 @@ public class MovieTapeController : ControllerBase
 			return BadRequest(new { error = "No file selected" });
 
 		string fullVideoUrl = null;
+		string thumbnailUrl = null;
 		try
 		{ 
 			var relativePath = await _videoService.SaveVideoAsync(request.Video);
 
 			fullVideoUrl  = $"{Request.Scheme}://{Request.Host}{relativePath}";
 
-			var ThumbnailName = await _posterService.SavePosterAsync(request.Thumbnail);
+			thumbnailUrl = await _posterService.SavePosterAsync(request.Thumbnail);
 
 			var movieTape = new MovieTape
 			{
 				TapeTitle = request.TapeTitle,
 				MediaType = request.MediaType,
 				VideoUrl = fullVideoUrl,
-				ThumbnailUrl = ThumbnailName,
+				ThumbnailUrl = thumbnailUrl,
 				MovieId = request.MovieId
 			};
 
@@ -69,6 +70,8 @@ public class MovieTapeController : ControllerBase
 		catch (Exception ex)
 		{
 			_videoService.DeleteVideoByUrlAsync(fullVideoUrl).Wait(); // Ensure cleanup on error
+			_posterService.DeleteFileByNameAsync(thumbnailUrl).Wait(); // Ensure cleanup on error
+			
 			return BadRequest(new { error = ex.Message });
 		}
 	}
