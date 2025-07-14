@@ -14,4 +14,5 @@ public class WatchRoomUser
 
 	[Required]
 	public string Role { get; set; } = "guest"; // "host", "guest", "moderator" и т.д.
+	public int? UserId { get; set; } // если есть логин/авторизация через access token
 }

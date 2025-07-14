@@ -75,7 +75,7 @@ builder.Services.AddCors(options =>
 	options.AddPolicy("SignalR", policy =>
 	{
 		policy
-			.WithOrigins("http://localhost:5500", "http://127.0.0.1:5500") // заменить на frontend origin
+			.WithOrigins("http://localhost:5500", "http://127.0.0.1:5500") // заменить на frontend origin (не могу вынести 2 кода в appsettings так как в финале будет 1(или больше), все равно надо будет тут менять, а после этого уже можно будет вынести)
 			.AllowAnyHeader()
 			.AllowAnyMethod()
 			.AllowCredentials(); // обязательно для SignalR

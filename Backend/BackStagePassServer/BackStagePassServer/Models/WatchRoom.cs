@@ -7,11 +7,13 @@ public class WatchRoom
 	public int Id { get; set; }
 
 	[Required]
-	public string RoomCode { get; set; } = default!; // Уникальный код комнаты (например, "test-room")
+	public string RoomCode { get; set; }
+
+	public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
 	public bool IsPrivate { get; set; } = false;
 
-	public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+	public string? PasswordHash { get; set; } // если хочешь позже добавить пароль
 
 	public ICollection<WatchRoomUser> Users { get; set; } = new List<WatchRoomUser>();
 }
