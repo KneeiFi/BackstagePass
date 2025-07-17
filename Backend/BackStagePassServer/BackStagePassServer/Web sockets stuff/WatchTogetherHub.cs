@@ -8,8 +8,6 @@ namespace BackStagePassServer.Web_sockets_stuff;
 
 public class WatchTogetherHub : Hub
 {
-	//private static readonly Dictionary<string, HashSet<string>> Rooms = new();
-
 	private readonly AppDbContext _context;
 	private readonly AuthService _authService;
 
@@ -171,15 +169,16 @@ public class WatchTogetherHub : Hub
 			return;
 		}
 
-		if (user.Role != "host")
-			return;
-
 		switch (command)
 		{
 			case "transfer_host":
 			{
-				// Ожидается: { userId: 123 }
-				int? userId = (data as dynamic)?.userId;
+
+				if (user.Role != "host")
+					return;
+
+					// Ожидается: { userId: 123 }
+					int? userId = (data as dynamic)?.userId;
 				if (userId == null) return;
 
 				var targetUser = room.Users.FirstOrDefault(u => u.UserId == userId);
@@ -200,8 +199,11 @@ public class WatchTogetherHub : Hub
 
 			case "kick":
 			{
-				// Ожидается: { userId: 123 }
-				int? userId = (data as dynamic)?.userId;
+				if (user.Role != "host")
+					return;
+
+					// Ожидается: { userId: 123 }
+					int? userId = (data as dynamic)?.userId;
 				if (userId == null) return;
 
 				var kickedUser = room.Users.FirstOrDefault(u => u.UserId == userId);
@@ -220,6 +222,9 @@ public class WatchTogetherHub : Hub
 
 			case "set_password":
 			{
+				if (user.Role != "host")
+					return;
+
 				string? password = (data as dynamic)?.password;
 				room.IsPrivate = !string.IsNullOrEmpty(password);
 				room.PasswordHash = string.IsNullOrEmpty(password) ? null : BCrypt.Net.BCrypt.HashPassword(password);
